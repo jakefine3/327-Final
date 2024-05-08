@@ -51,7 +51,18 @@ JOIN salary s ON j.salary_id = s.salary_id
 WHERE s.salary_id IN (
     SELECT salary_id
     FROM salary
+
     GROUP BY salary_id
     ORDER BY MAX(salary_to) DESC
 );
+
+/*View 6*/
+CREATE VIEW java_jobs_for_ukranians AS
+SELECT j.job_id, t.marker_icon, j.open_to_hire_ukranians
+FROM job j
+JOIN title t 
+ON j.title_id = t.title_id
+WHERE t.marker_icon IN ("javascript", "java") AND j.open_to_hire_ukranians = "TRUE";
+
+
 
