@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `polish_it_jobs` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `polish_it_jobs` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `polish_it_jobs`;
 -- MySQL dump 10.13  Distrib 8.0.34, for macos13 (arm64)
 --
@@ -29,7 +29,7 @@ CREATE TABLE `company_details` (
   `company_size_from` decimal(10,5) DEFAULT NULL,
   `company_size_to` decimal(10,5) DEFAULT NULL,
   PRIMARY KEY (`company_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +53,7 @@ CREATE TABLE `experience` (
   `experience_id` int NOT NULL,
   `experience_level` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`experience_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `job` (
   CONSTRAINT `fk_Job_Salary1` FOREIGN KEY (`salary_id`) REFERENCES `salary` (`salary_id`),
   CONSTRAINT `fk_job_skills1` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`skill_id`),
   CONSTRAINT `fk_Job_Title` FOREIGN KEY (`title_id`) REFERENCES `title` (`title_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `job_has_company_details` (
   KEY `fk_Job_has_company_details_Job1_idx` (`job_id`),
   CONSTRAINT `fk_Job_has_company_details_company_details1` FOREIGN KEY (`company_id`) REFERENCES `company_details` (`company_id`),
   CONSTRAINT `fk_Job_has_company_details_Job1` FOREIGN KEY (`job_id`) REFERENCES `job` (`job_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +150,7 @@ CREATE TABLE `job_has_workplace_type` (
   KEY `fk_Job_has_workplace_type_Job1_idx` (`job_id`),
   CONSTRAINT `fk_Job_has_workplace_type_Job1` FOREIGN KEY (`job_id`) REFERENCES `job` (`job_id`),
   CONSTRAINT `fk_Job_has_workplace_type_workplace_type1` FOREIGN KEY (`workplace_type_id`) REFERENCES `workplace_type` (`workplace_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,7 +175,7 @@ CREATE TABLE `locations` (
   `country_code` varchar(45) DEFAULT NULL,
   `city` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `salary` (
   `salary_from` decimal(10,4) DEFAULT NULL,
   `salary_to` decimal(10,4) DEFAULT NULL,
   PRIMARY KEY (`salary_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,7 +230,7 @@ CREATE TABLE `skills` (
   `skill_value_2` int DEFAULT NULL,
   `skill_value_3` int DEFAULT NULL,
   PRIMARY KEY (`skill_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -255,7 +255,7 @@ CREATE TABLE `title` (
   `title_name` varchar(100) DEFAULT NULL,
   `marker_icon` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`title_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -279,7 +279,7 @@ CREATE TABLE `workplace_type` (
   `workplace_type_id` int NOT NULL,
   `workplace_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`workplace_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
